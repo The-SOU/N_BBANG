@@ -1,0 +1,122 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
+}
+
+android {
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "com.theone.n_bbang"
+        minSdk 21
+        targetSdk 33
+
+        versionCode 1
+        /**
+         *
+         *
+         */
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            shrinkResources true
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
+//            shrinkResources true
+//            minifyEnabled true
+//            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+
+            /** 개발 빌드일 때 활성화 하는 것 */
+            splits.abi.enable = false
+            splits.density.enable = false
+            aaptOptions.cruncherEnabled = false
+            ext.alwaysUpdateBuildid = false
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
+
+    kapt {
+        correctErrorTypes = true
+    }
+    buildFeatures {
+        dataBinding true
+    }
+}
+
+dependencies {
+    implementation project(":data")
+    implementation project(":domain")
+
+    /** AndroidX */
+    implementation (AndroidX.CORE)
+    implementation (AndroidX.APP_COMPAT)
+    implementation (AndroidX.MATERIAL)
+    implementation (AndroidX.CONSTRAINT_LAYOUT)
+    testImplementation (AndroidX.JUNIT)
+    androidTestImplementation (AndroidX.TEST_JUNIT)
+    androidTestImplementation (AndroidX.TEST_ESPRESSO)
+    implementation (AndroidX.ACTIVITY)
+    implementation (AndroidX.STARTUP)
+
+    /** Room */
+    implementation (Room.ROOM_RUNTIME)
+    kapt(Room.ROOM_COMPILER)
+    annotationProcessor (Room.ROOM_COMPILER)
+    implementation (Room.ROOM_RXJAVA2)
+    androidTestImplementation (Room.ROOM_TESTING)
+
+    /** Hilt */
+    implementation (Hilt.HILT)
+    kapt (Hilt.HILT_COMPILER)
+
+    /** Retrofit */
+    implementation (Retrofit.RETROFIT)
+    implementation (Retrofit.RETROFIT_CONVERTER_GSON)
+
+    /** Okhttp3 */
+    implementation(platform(Okhttp3.OKHTTP3_BOM))
+    implementation (Okhttp3.OKHTTP3)
+    implementation (Okhttp3.OKHTTP3_INTERCEPTER)
+
+    /** Coroutines */
+    implementation (Coroutines.COROUTINES_CORE)
+    implementation (Coroutines.COROUTINES_ANDROID)
+
+    /** Lifecycle */
+    implementation (Lifecycle.LIFECYCLE_VIEWMODEL)
+    implementation (Lifecycle.LIFECYCLE_RUNTIME)
+
+    /** ImageCrop */
+    implementation (ImageCrop.IMAGE_CROOPER)
+
+    /** Naver */
+    implementation (Naver.NAVER_MAP)
+
+    /** MQTT */
+    implementation (Mqtt.MQTT3)
+    implementation files(Mqtt.MQTT3_RELEASE_AAR)
+    implementation (Mqtt.TIMER)
+    implementation (Mqtt.LIFECYCLE_EXTENSIONS)
+
+    /** DataStore */
+    implementation (DataStore.DATA_STORE)
+}

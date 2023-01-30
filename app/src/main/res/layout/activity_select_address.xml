@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="activity"
+            type="com.theone.n_bbang.view.SelectAddressActivity" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".view.SelectAddressActivity">
+
+        <ImageView
+            android:id="@+id/img_search"
+            android:layout_width="0.1dp"
+            android:layout_height="0.1dp"
+            app:layout_constraintTop_toTopOf="@id/et_search_address"
+            app:layout_constraintBottom_toBottomOf="@id/et_search_address"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/et_search_address"
+            android:layout_marginStart="15dp"
+            android:adjustViewBounds="true"
+            android:src="@drawable/ic_search"/>
+
+        <EditText
+            android:id="@+id/et_search_address"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@id/img_search"
+            app:layout_constraintEnd_toStartOf="@id/btn_delete_et"
+            android:layout_marginTop="25dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="15dp"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:textSize="18sp"
+            android:hint="동네(동,읍,면)를 입력"
+            android:background="@null"
+            android:includeFontPadding="false"/>
+
+        <ImageView
+            android:id="@+id/btn_delete_et"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            app:layout_constraintTop_toTopOf="@id/et_search_address"
+            app:layout_constraintBottom_toBottomOf="@id/et_search_address"
+            app:layout_constraintStart_toEndOf="@id/et_search_address"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="15dp"
+            android:adjustViewBounds="true"
+            android:src="@drawable/ic_search_close"
+            android:visibility="visible"
+            />
+
+        <View
+            android:id="@+id/line_search_address"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            app:layout_constraintTop_toBottomOf="@id/et_search_address"
+            app:layout_constraintStart_toStartOf="@id/img_search"
+            app:layout_constraintEnd_toEndOf="@id/btn_delete_et"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/color_primary_line"/>
+
+        <TextView
+            android:id="@+id/tv_result_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/line_search_address"
+            app:layout_constraintStart_toStartOf="@id/img_search"
+            android:layout_marginTop="25dp"
+            android:fontFamily="@font/notosans_kr_medium"
+            android:includeFontPadding="false"
+            android:textSize="15sp"
+            android:textColor="@color/black"
+            android:text="근처 동네"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@id/tv_result_address"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@id/line_search_address"
+            app:layout_constraintEnd_toEndOf="@id/line_search_address"
+            android:layout_marginTop="25dp"/>
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

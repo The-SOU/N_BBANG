@@ -1,0 +1,22 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+        maven { url "https://repo.eclipse.org/content/repositories/paho-snapshots/" }
+//        maven { url 'https://navercorp.bintray.com/maps' }
+        maven { url 'https://naver.jfrog.io/artifactory/maven/' }
+        maven { url 'https://jitpack.io' }
+    }
+}
+rootProject.name = "N_BBANG"
+include ':app'
+include ':domain'
+include ':data'

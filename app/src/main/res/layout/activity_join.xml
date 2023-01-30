@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="activity"
+            type="com.theone.n_bbang.view.JoinActivity" />
+    </data>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".view.JoinActivity">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            >
+
+            <ImageView
+                android:id="@+id/btn_back"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintTop_toTopOf="@id/tv_toolbar_tab"
+                app:layout_constraintBottom_toBottomOf="@id/tv_toolbar_tab"
+                app:layout_constraintStart_toStartOf="parent"
+                android:adjustViewBounds="false"
+                android:src="@drawable/ic_arrow"
+                android:rotation="180"/>
+            <TextView
+                android:id="@+id/tv_toolbar_tab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/btn_back"
+                android:layout_marginStart="10dp"
+                android:fontFamily="@font/notosans_kr_bold"
+                android:includeFontPadding="false"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:text="회원가입"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:overScrollMode="never">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_margin="20dp"
+                    >
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/layout_join_detail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:background="@drawable/border_gray_radius"
+                        >
+
+                        <TextView
+                            android:id="@+id/tv_default_id"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            android:paddingTop="15dp"
+                            android:paddingStart="15dp"
+                            android:paddingEnd="15dp"
+                            android:fontFamily="@font/notosans_kr_medium"
+                            android:includeFontPadding="false"
+                            android:textSize="15sp"
+                            android:textColor="@color/colorGrayLight"
+                            android:text="아이디"/>
+
+                        <EditText
+                            android:id="@+id/et_id"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintTop_toBottomOf="@id/tv_default_id"
+                            app:layout_constraintStart_toStartOf="@id/tv_default_id"
+                            android:paddingTop="10dp"
+                            android:paddingStart="15dp"
+                            android:paddingEnd="15dp"
+                            android:paddingBottom="15dp"
+                            android:maxLines="1"
+                            android:singleLine="true"
+                            android:textSize="15sp"
+                            android:textColor="@color/black"
+                            android:hint=""
+                            android:background="@null"
+                            android:includeFontPadding="false"/>
+
+                        <View
+                            android:id="@+id/divider_id"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            app:layout_constraintTop_toBottomOf="@id/et_id"
+                            android:background="@color/colorGrayLight"/>
+
+                        <TextView
+                            android:id="@+id/tv_default_pw"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintTop_toBottomOf="@id/divider_id"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            android:paddingTop="15dp"
+                            android:paddingStart="15dp"
+                            android:paddingEnd="15dp"
+                            android:fontFamily="@font/notosans_kr_medium"
+                            android:includeFontPadding="false"
+                            android:textSize="15sp"
+                            android:textColor="@color/colorGrayLight"
+                            android:text="비밀번호"/>
+
+                        <EditText
+                            android:id="@+id/et_pw"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintTop_toBottomOf="@id/tv_default_pw"
+                            app:layout_constraintStart_toStartOf="@id/tv_default_pw"
+                            android:paddingTop="10dp"
+                            android:paddingBottom="15dp"
+                            android:paddingStart="15dp"
+                            android:paddingEnd="15dp"
+                            android:maxLines="1"
+                            android:singleLine="true"
+                            android:textColor="@color/black"
+                            android:textSize="15sp"
+                            android:hint=""
+                            android:background="@null"
+                            android:includeFontPadding="false"/>
+
+                        <View
+                            android:id="@+id/divider_pw"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            app:layout_constraintTop_toBottomOf="@id/et_pw"
+                            android:background="@color/colorGrayLight"/>
+
+                        <TextView
+                            android:id="@+id/tv_default_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintTop_toBottomOf="@id/divider_pw"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            android:paddingTop="15dp"
+                            android:paddingStart="15dp"
+                            android:paddingEnd="15dp"
+                            android:fontFamily="@font/notosans_kr_medium"
+                            android:includeFontPadding="false"
+                            android:textSize="15sp"
+                            android:textColor="@color/colorGrayLight"
+                            android:text="이름"/>
+
+                        <EditText
+                            android:id="@+id/et_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintTop_toBottomOf="@id/tv_default_name"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            android:paddingTop="10dp"
+                            android:paddingStart="15dp"
+                            android:paddingEnd="15dp"
+                            android:paddingBottom="15dp"
+                            android:maxLines="1"
+                            android:textColor="@color/black"
+                            android:singleLine="true"
+                            android:textSize="15sp"
+                            android:hint=""
+                            android:background="@null"
+                            android:includeFontPadding="false"/>
+
+                        <View
+                            android:id="@+id/divider_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            app:layout_constraintTop_toBottomOf="@id/et_name"
+                            android:background="@color/colorGrayLight"/>
+
+                        <TextView
+                            android:id="@+id/tv_default_phone"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintTop_toBottomOf="@id/divider_name"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            android:paddingTop="15dp"
+                            android:paddingStart="15dp"
+                            android:paddingEnd="15dp"
+                            android:fontFamily="@font/notosans_kr_medium"
+                            android:includeFontPadding="false"
+                            android:textSize="15sp"
+                            android:textColor="@color/colorGrayLight"
+                            android:text="휴대전화 번호"/>
+
+                        <EditText
+                            android:id="@+id/et_phone"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintTop_toBottomOf="@id/tv_default_phone"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            android:paddingTop="10dp"
+                            android:paddingStart="15dp"
+                            android:paddingEnd="15dp"
+                            android:paddingBottom="15dp"
+                            android:textColor="@color/black"
+                            android:maxLines="1"
+                            android:singleLine="true"
+                            android:textSize="15sp"
+                            android:hint=""
+                            android:background="@null"
+                            android:includeFontPadding="false"/>
+
+                        <View
+                            android:id="@+id/divider_phone"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            app:layout_constraintTop_toBottomOf="@id/et_phone"
+                            android:background="@color/colorGrayLight"/>
+
+                        <TextView
+                            android:id="@+id/tv_default_nickname"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintTop_toBottomOf="@id/divider_phone"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            android:paddingTop="15dp"
+                            android:paddingStart="15dp"
+                            android:paddingEnd="15dp"
+                            android:fontFamily="@font/notosans_kr_medium"
+                            android:includeFontPadding="false"
+                            android:textSize="15sp"
+                            android:textColor="@color/colorGrayLight"
+                            android:text="닉네임"/>
+
+                        <EditText
+                            android:id="@+id/et_nickname"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintTop_toBottomOf="@id/tv_default_nickname"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            android:paddingTop="10dp"
+                            android:paddingStart="15dp"
+                            android:paddingEnd="15dp"
+                            android:paddingBottom="15dp"
+                            android:textColor="@color/black"
+                            android:maxLines="1"
+                            android:singleLine="true"
+                            android:textSize="15sp"
+                            android:hint=""
+                            android:background="@null"
+                            android:includeFontPadding="false"/>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/layout_accent_id"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="@id/divider_id"
+                            android:background="@drawable/border_primary_radius_top"
+                            android:visibility="gone"/>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/layout_accent_pw"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            app:layout_constraintTop_toTopOf="@id/divider_id"
+                            app:layout_constraintBottom_toBottomOf="@id/divider_pw"
+                            android:background="@drawable/border_primary"
+                            android:visibility="gone"
+                            />
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/layout_accent_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            app:layout_constraintTop_toTopOf="@id/divider_pw"
+                            app:layout_constraintBottom_toBottomOf="@id/divider_name"
+                            android:background="@drawable/border_primary"
+                            android:visibility="gone"
+                            />
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/layout_accent_phone"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            app:layout_constraintTop_toTopOf="@id/divider_name"
+                            app:layout_constraintBottom_toBottomOf="@id/divider_phone"
+                            android:background="@drawable/border_primary"
+                            android:visibility="gone"
+                            />
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/layout_accent_nickname"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            app:layout_constraintTop_toTopOf="@id/divider_phone"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            android:background="@drawable/border_primary_radius_bottom"
+                            android:visibility="gone"
+                            />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/layout_checkbox_push"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toBottomOf="@id/layout_join_detail"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:layout_marginTop="15dp"
+                        >
+
+                        <View
+                            android:id="@+id/view_checkbox_push"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            app:layout_constraintDimensionRatio="1:1"
+                            app:layout_constraintTop_toTopOf="@id/tv_push_default"
+                            app:layout_constraintBottom_toBottomOf="@id/tv_push_default"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toStartOf="@id/tv_push_default"
+                            android:background="@drawable/border_gray_radius_checkbox"
+                            />
+
+                        <ImageView
+                            android:id="@+id/img_check"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            app:layout_constraintTop_toTopOf="@id/view_checkbox_push"
+                            app:layout_constraintBottom_toBottomOf="@id/view_checkbox_push"
+                            app:layout_constraintStart_toStartOf="@id/view_checkbox_push"
+                            app:layout_constraintEnd_toEndOf="@id/view_checkbox_push"
+                            android:padding="5dp"
+                            android:src="@drawable/ic_check"
+                            app:tint="@color/white"
+                            android:visibility="gone"
+                            />
+
+                        <TextView
+                            android:id="@+id/tv_push_default"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/view_checkbox_push"
+                            android:layout_marginStart="15dp"
+                            android:paddingBottom="2dp"
+                            android:fontFamily="@font/notosans_kr_regular"
+                            android:includeFontPadding="false"
+                            android:textSize="15sp"
+                            android:textColor="@color/black"
+                            android:text="PUSH 마케팅 정보 수신에 동의합니다."/>
+
+
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+≈
+
+                    <TextView
+                        android:id="@+id/btn_ok"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toBottomOf="@id/layout_checkbox_push"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:layout_marginTop="20dp"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
+                        android:paddingStart="15dp"
+                        android:paddingEnd="15dp"
+                        android:background="@drawable/radius_primary"
+                        android:backgroundTint="@color/colorPrimaryVer2"
+                        android:fontFamily="@font/notosans_kr_medium"
+                        android:includeFontPadding="false"
+                        android:textSize="13sp"
+                        android:textColor="@color/white"
+                        android:text="다음"/>
+
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+
+
+
+
+
+
+    </LinearLayout>
+
+</layout>
