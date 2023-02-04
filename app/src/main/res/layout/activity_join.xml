@@ -64,6 +64,7 @@
                     android:layout_height="wrap_content"
                     app:layout_constraintTop_toTopOf="parent"
                     android:layout_margin="20dp"
+                    android:animateLayoutChanges="true"
                     >
 
                     <androidx.constraintlayout.widget.ConstraintLayout
@@ -74,8 +75,8 @@
                         android:background="@drawable/border_gray_radius"
                         >
 
-                        <TextView
-                            android:id="@+id/tv_default_id"
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/layout_default_id"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             app:layout_constraintTop_toTopOf="parent"
@@ -84,18 +85,43 @@
                             android:paddingTop="15dp"
                             android:paddingStart="15dp"
                             android:paddingEnd="15dp"
-                            android:fontFamily="@font/notosans_kr_medium"
-                            android:includeFontPadding="false"
-                            android:textSize="15sp"
-                            android:textColor="@color/colorGrayLight"
-                            android:text="아이디"/>
+                            android:animateLayoutChanges="true">
+                            <TextView
+                                android:id="@+id/tv_default_id"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                android:fontFamily="@font/notosans_kr_medium"
+                                android:includeFontPadding="false"
+                                android:textSize="15sp"
+                                android:textColor="@color/colorGrayLight"
+                                android:text="아이디"/>
+
+                            <TextView
+                                android:id="@+id/tv_result_id"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                app:layout_constraintTop_toTopOf="@id/tv_default_id"
+                                app:layout_constraintBottom_toBottomOf="@id/tv_default_id"
+                                app:layout_constraintStart_toEndOf="@id/tv_default_id"
+                                android:layout_marginStart="10dp"
+                                android:fontFamily="@font/notosans_kr_medium"
+                                android:includeFontPadding="false"
+                                android:textSize="13sp"
+                                android:textColor="@color/colorTextWarning"
+                                android:text="사용 불가능한 아이디입니다."
+                                android:visibility="gone"/>
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
 
                         <EditText
                             android:id="@+id/et_id"
+                            android:tag="etID"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            app:layout_constraintTop_toBottomOf="@id/tv_default_id"
-                            app:layout_constraintStart_toStartOf="@id/tv_default_id"
+                            app:layout_constraintTop_toBottomOf="@id/layout_default_id"
+                            app:layout_constraintStart_toStartOf="@id/layout_default_id"
                             android:paddingTop="10dp"
                             android:paddingStart="15dp"
                             android:paddingEnd="15dp"
@@ -115,8 +141,8 @@
                             app:layout_constraintTop_toBottomOf="@id/et_id"
                             android:background="@color/colorGrayLight"/>
 
-                        <TextView
-                            android:id="@+id/tv_default_pw"
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/layout_default_pw"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             app:layout_constraintTop_toBottomOf="@id/divider_id"
@@ -125,18 +151,44 @@
                             android:paddingTop="15dp"
                             android:paddingStart="15dp"
                             android:paddingEnd="15dp"
-                            android:fontFamily="@font/notosans_kr_medium"
-                            android:includeFontPadding="false"
-                            android:textSize="15sp"
-                            android:textColor="@color/colorGrayLight"
-                            android:text="비밀번호"/>
+                            android:animateLayoutChanges="true"
+                            >
+
+                            <TextView
+                                android:id="@+id/tv_default_pw"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                android:fontFamily="@font/notosans_kr_medium"
+                                android:includeFontPadding="false"
+                                android:textSize="15sp"
+                                android:textColor="@color/colorGrayLight"
+                                android:text="비밀번호"/>
+
+                            <TextView
+                                android:id="@+id/tv_result_pw"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                app:layout_constraintTop_toTopOf="@id/tv_default_pw"
+                                app:layout_constraintBottom_toBottomOf="@id/tv_default_pw"
+                                app:layout_constraintStart_toEndOf="@id/tv_default_pw"
+                                android:layout_marginStart="10dp"
+                                android:fontFamily="@font/notosans_kr_medium"
+                                android:includeFontPadding="false"
+                                android:textSize="13sp"
+                                android:textColor="@color/colorTextWarning"
+                                android:text="사용 불가능한 아이디입니다."
+                                android:visibility="gone"/>
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
 
                         <EditText
                             android:id="@+id/et_pw"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            app:layout_constraintTop_toBottomOf="@id/tv_default_pw"
-                            app:layout_constraintStart_toStartOf="@id/tv_default_pw"
+                            app:layout_constraintTop_toBottomOf="@id/layout_default_pw"
+                            app:layout_constraintStart_toStartOf="@id/layout_default_pw"
                             android:paddingTop="10dp"
                             android:paddingBottom="15dp"
                             android:paddingStart="15dp"
@@ -156,8 +208,8 @@
                             app:layout_constraintTop_toBottomOf="@id/et_pw"
                             android:background="@color/colorGrayLight"/>
 
-                        <TextView
-                            android:id="@+id/tv_default_name"
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/layout_default_pw_re"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             app:layout_constraintTop_toBottomOf="@id/divider_pw"
@@ -166,17 +218,95 @@
                             android:paddingTop="15dp"
                             android:paddingStart="15dp"
                             android:paddingEnd="15dp"
-                            android:fontFamily="@font/notosans_kr_medium"
-                            android:includeFontPadding="false"
+                            android:animateLayoutChanges="true"
+                            >
+
+                            <TextView
+                                android:id="@+id/tv_default_pw_re"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                android:fontFamily="@font/notosans_kr_medium"
+                                android:includeFontPadding="false"
+                                android:textSize="15sp"
+                                android:textColor="@color/colorGrayLight"
+                                android:text="비밀번호 재입력"/>
+
+                            <TextView
+                                android:id="@+id/tv_result_pw_re"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                app:layout_constraintTop_toTopOf="@id/tv_default_pw_re"
+                                app:layout_constraintBottom_toBottomOf="@id/tv_default_pw_re"
+                                app:layout_constraintStart_toEndOf="@id/tv_default_pw_re"
+                                android:layout_marginStart="10dp"
+                                android:fontFamily="@font/notosans_kr_medium"
+                                android:includeFontPadding="false"
+                                android:textSize="13sp"
+                                android:textColor="@color/colorTextWarning"
+                                android:text="사용 불가능한 아이디입니다."
+                                android:visibility="gone"/>
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <EditText
+                            android:id="@+id/et_pw_re"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintTop_toBottomOf="@id/layout_default_pw_re"
+                            app:layout_constraintStart_toStartOf="@id/layout_default_pw_re"
+                            android:paddingTop="10dp"
+                            android:paddingBottom="15dp"
+                            android:paddingStart="15dp"
+                            android:paddingEnd="15dp"
+                            android:maxLines="1"
+                            android:singleLine="true"
+                            android:textColor="@color/black"
                             android:textSize="15sp"
-                            android:textColor="@color/colorGrayLight"
-                            android:text="이름"/>
+                            android:hint=""
+                            android:background="@null"
+                            android:includeFontPadding="false"/>
+
+                        <View
+                            android:id="@+id/divider_pw_re"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            app:layout_constraintTop_toBottomOf="@id/et_pw_re"
+                            android:background="@color/colorGrayLight"/>
+
+
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/layout_default_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintTop_toBottomOf="@id/divider_pw_re"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            android:paddingTop="15dp"
+                            android:paddingStart="15dp"
+                            android:paddingEnd="15dp">
+
+                            <TextView
+                                android:id="@+id/tv_default_name"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                android:fontFamily="@font/notosans_kr_medium"
+                                android:includeFontPadding="false"
+                                android:textSize="15sp"
+                                android:textColor="@color/colorGrayLight"
+                                android:text="이름"/>
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
 
                         <EditText
                             android:id="@+id/et_name"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            app:layout_constraintTop_toBottomOf="@id/tv_default_name"
+                            app:layout_constraintTop_toBottomOf="@id/layout_default_name"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             android:paddingTop="10dp"
@@ -198,8 +328,8 @@
                             app:layout_constraintTop_toBottomOf="@id/et_name"
                             android:background="@color/colorGrayLight"/>
 
-                        <TextView
-                            android:id="@+id/tv_default_phone"
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/layout_default_phone"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             app:layout_constraintTop_toBottomOf="@id/divider_name"
@@ -207,26 +337,52 @@
                             app:layout_constraintEnd_toEndOf="parent"
                             android:paddingTop="15dp"
                             android:paddingStart="15dp"
-                            android:paddingEnd="15dp"
-                            android:fontFamily="@font/notosans_kr_medium"
-                            android:includeFontPadding="false"
-                            android:textSize="15sp"
-                            android:textColor="@color/colorGrayLight"
-                            android:text="휴대전화 번호"/>
+                            android:paddingEnd="15dp">
+
+                            <TextView
+                                android:id="@+id/tv_default_phone"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                android:fontFamily="@font/notosans_kr_medium"
+                                android:includeFontPadding="false"
+                                android:textSize="15sp"
+                                android:textColor="@color/colorGrayLight"
+                                android:text="휴대전화 번호"/>
+
+                            <TextView
+                                android:id="@+id/tv_result_phone"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                app:layout_constraintTop_toTopOf="@id/tv_default_phone"
+                                app:layout_constraintBottom_toBottomOf="@id/tv_default_phone"
+                                app:layout_constraintStart_toEndOf="@id/tv_default_phone"
+                                android:layout_marginStart="10dp"
+                                android:fontFamily="@font/notosans_kr_medium"
+                                android:includeFontPadding="false"
+                                android:textSize="13sp"
+                                android:textColor="@color/colorTextWarning"
+                                android:text="사용 불가능한 아이디입니다."
+                                android:visibility="gone"/>
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
 
                         <EditText
                             android:id="@+id/et_phone"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            app:layout_constraintTop_toBottomOf="@id/tv_default_phone"
+                            app:layout_constraintTop_toBottomOf="@id/layout_default_phone"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             android:paddingTop="10dp"
                             android:paddingStart="15dp"
                             android:paddingEnd="15dp"
                             android:paddingBottom="15dp"
+                            android:inputType="phone"
                             android:textColor="@color/black"
                             android:maxLines="1"
+                            android:maxLength="13"
                             android:singleLine="true"
                             android:textSize="15sp"
                             android:hint=""
@@ -240,8 +396,8 @@
                             app:layout_constraintTop_toBottomOf="@id/et_phone"
                             android:background="@color/colorGrayLight"/>
 
-                        <TextView
-                            android:id="@+id/tv_default_nickname"
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/layout_default_nickname"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             app:layout_constraintTop_toBottomOf="@id/divider_phone"
@@ -249,18 +405,27 @@
                             app:layout_constraintEnd_toEndOf="parent"
                             android:paddingTop="15dp"
                             android:paddingStart="15dp"
-                            android:paddingEnd="15dp"
-                            android:fontFamily="@font/notosans_kr_medium"
-                            android:includeFontPadding="false"
-                            android:textSize="15sp"
-                            android:textColor="@color/colorGrayLight"
-                            android:text="닉네임"/>
+                            android:paddingEnd="15dp">
+
+                            <TextView
+                                android:id="@+id/tv_default_nickname"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                android:fontFamily="@font/notosans_kr_medium"
+                                android:includeFontPadding="false"
+                                android:textSize="15sp"
+                                android:textColor="@color/colorGrayLight"
+                                android:text="닉네임"/>
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
 
                         <EditText
                             android:id="@+id/et_nickname"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            app:layout_constraintTop_toBottomOf="@id/tv_default_nickname"
+                            app:layout_constraintTop_toBottomOf="@id/layout_default_nickname"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             android:paddingTop="10dp"
@@ -295,10 +460,20 @@
                             />
 
                         <androidx.constraintlayout.widget.ConstraintLayout
-                            android:id="@+id/layout_accent_name"
+                            android:id="@+id/layout_accent_pw_re"
                             android:layout_width="match_parent"
                             android:layout_height="0dp"
                             app:layout_constraintTop_toTopOf="@id/divider_pw"
+                            app:layout_constraintBottom_toBottomOf="@id/divider_pw_re"
+                            android:background="@drawable/border_primary"
+                            android:visibility="gone"
+                            />
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/layout_accent_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            app:layout_constraintTop_toTopOf="@id/divider_pw_re"
                             app:layout_constraintBottom_toBottomOf="@id/divider_name"
                             android:background="@drawable/border_primary"
                             android:visibility="gone"
@@ -332,6 +507,7 @@
                         app:layout_constraintTop_toBottomOf="@id/layout_join_detail"
                         app:layout_constraintStart_toStartOf="parent"
                         android:layout_marginTop="15dp"
+                        android:animateLayoutChanges="true"
                         >
 
                         <View
@@ -373,13 +549,7 @@
                             android:textSize="15sp"
                             android:textColor="@color/black"
                             android:text="PUSH 마케팅 정보 수신에 동의합니다."/>
-
-
-
-
                     </androidx.constraintlayout.widget.ConstraintLayout>
-
-≈
 
                     <TextView
                         android:id="@+id/btn_ok"

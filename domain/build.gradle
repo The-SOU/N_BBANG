@@ -107,13 +107,13 @@ dependencies {
     implementation (ImageCrop.IMAGE_CROOPER)
 
     /** Naver */
-    implementation (Naver.NAVER_MAP)
+//    implementation (Naver.NAVER_MAP)
 
     /** MQTT */
-    implementation (Mqtt.MQTT3)
-    implementation files(Mqtt.MQTT3_RELEASE_AAR)
-    implementation (Mqtt.TIMER)
-    implementation (Mqtt.LIFECYCLE_EXTENSIONS)
+//    implementation (Mqtt.MQTT3)
+//    implementation files(Mqtt.MQTT3_RELEASE_AAR)
+//    implementation (Mqtt.TIMER)
+//    implementation (Mqtt.LIFECYCLE_EXTENSIONS)
 }
 
 version = '0.1.0'

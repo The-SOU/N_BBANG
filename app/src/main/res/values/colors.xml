@@ -23,10 +23,14 @@
     <color name="colorGroupLayout">#F2F3F5</color>
     <color name="colorGrayLight">#E1E1E1</color>
     <color name="colorGrayText">#888888</color>
+    <color name="colorBackgroundLightGray">#FAFAFA</color>
+
 
 
     <!--item_trade-->
-    <color name="colorCheck">#57E272</color>
+    <color name="colorTextSuccess">#57E272</color>
+    <color name="colorTextWarning">#E04B4B</color>
+
 
 
 
