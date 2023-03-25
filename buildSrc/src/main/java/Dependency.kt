@@ -69,5 +69,7 @@ object DataStore {
 }
 
 object FireBase {
-    const val FIREBASE = "com.google.firebase:firebase-bom:31.2.3"
+    const val FIREBASE_BOM = "com.google.firebase:firebase-bom:30.4.1"
+    const val FIREBASE_MESSAGING = "com.google.firebase:firebase-messaging-ktx"
+    const val FIREBASE_ANALYTICS = "com.google.firebase:firebase-analytics-ktx"
 }

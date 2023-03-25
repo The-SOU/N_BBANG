@@ -122,5 +122,7 @@ dependencies {
     implementation (DataStore.DATA_STORE)
 
     /** FireBase */
-    implementation (FireBase.FIREBASE)
+    implementation (platform(FireBase.FIREBASE_BOM))
+    implementation (FireBase.FIREBASE_MESSAGING)
+    implementation (FireBase.FIREBASE_ANALYTICS)
 }

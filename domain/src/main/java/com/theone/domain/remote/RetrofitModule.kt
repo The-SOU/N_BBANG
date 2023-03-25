@@ -45,4 +45,7 @@ object RetrofitModule {
     fun provideNBbangApiService(retrofit: Retrofit): NBbangApi {
         return retrofit.create(NBbangApi::class.java)
     }
+
+    private fun getLoggingInterceptor(): HttpLoggingInterceptor =
+        HttpLoggingInterceptor().apply { level = HttpLoggingInterceptor.Level.BODY }
 }

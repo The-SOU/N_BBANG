@@ -144,7 +144,7 @@
                 android:background="@drawable/border_primary_radius">
 
                 <EditText
-                    android:id="@+id/et_search_address"
+                    android:id="@+id/et_input_id"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     app:layout_constraintTop_toTopOf="parent"

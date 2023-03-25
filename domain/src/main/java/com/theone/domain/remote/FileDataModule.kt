@@ -1,8 +1,8 @@
 package com.theone.domain.remote
 
 import android.content.Context
-import com.theone.n_bbang.widget.Data
-import com.theone.n_bbang.widget.FileData
+import com.theone.domain.utils.Data
+import com.theone.domain.utils.FileData
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

@@ -1,4 +1,4 @@
-package com.theone.n_bbang.widget
+package com.theone.domain.utils
 
 import android.content.Context
 import android.content.SharedPreferences

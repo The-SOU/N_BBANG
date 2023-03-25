@@ -18,7 +18,7 @@ object LoginResponse {
         @SerializedName("msg")
         var msg: String = "",
         @SerializedName("user_data")
-        var user_data: List<UserData> = listOf()
+        var user_data: UserData
     )
 
     data class UserData(

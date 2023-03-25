@@ -3,13 +3,19 @@ package com.theone.n_bbang.view
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
+import androidx.activity.viewModels
 import com.google.android.material.navigation.NavigationBarView
 import com.theone.n_bbang.R
 import com.theone.n_bbang.base.BaseActivity
 import com.theone.n_bbang.databinding.ActivityMainBinding
+import com.theone.n_bbang.viewmodel.LoginViewModel
+import dagger.hilt.android.AndroidEntryPoint
 import timber.log.Timber
 
+@AndroidEntryPoint
 class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
+
+    private val loginViewModel by viewModels<LoginViewModel>()
 
     val fragmentManager = supportFragmentManager
     override fun init() {
@@ -17,14 +23,12 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
 
         setNavigationBar()
     }
-
-
     private fun setNavigationBar() {
         binding.bottomNavigation.setOnItemSelectedListener(object : NavigationBarView.OnItemSelectedListener{
             override fun onNavigationItemSelected(item: MenuItem): Boolean {
                 when (item.itemId) {
                     R.id.action_home -> {
-                        val homeFragment = HomeFragment()
+                        val homeFragment = HomeFragment(loginViewModel)
                         supportFragmentManager.beginTransaction().replace(R.id.main_content, homeFragment).commit()
                         Timber.e("homeFragment")
                         return true
