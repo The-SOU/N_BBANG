@@ -318,7 +318,7 @@
             app:layout_constraintEnd_toEndOf="@id/layout_input_pw"
             android:layout_marginTop="20dp"
             android:background="@drawable/border_primary_circle"
-            android:visibility="gone"
+            android:visibility="visible"
             >
 
             <View

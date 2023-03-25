@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "699529368005",
+    "project_id": "nbbang-d8519",
+    "storage_bucket": "nbbang-d8519.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:699529368005:android:12dd3350c834f99769bbac",
+        "android_client_info": {
+          "package_name": "com.theone.n_bbang"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "699529368005-35umhprui949pbvib1p8e2etmaualvij.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.theone.n_bbang",
+            "certificate_hash": "e9de62ec10e7c2977c1528f36bc7232398612bc9"
+          }
+        },
+        {
+          "client_id": "699529368005-1elkt0ajbcoor1198p63on6muij8610l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCIbt1VnfYJ28p0Mat3yZrBcS6jcGTs7lI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "699529368005-1elkt0ajbcoor1198p63on6muij8610l.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

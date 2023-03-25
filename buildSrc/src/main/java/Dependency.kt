@@ -67,3 +67,7 @@ object Mqtt {
 object DataStore {
     const val DATA_STORE = "androidx.datastore:datastore-preferences:1.0.0"
 }
+
+object FireBase {
+    const val FIREBASE = "com.google.firebase:firebase-bom:31.2.3"
+}
